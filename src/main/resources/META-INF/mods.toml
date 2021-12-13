@@ -1,0 +1,30 @@
+	modLoader="javafml"
+	loaderVersion="[39,)"
+	license="MIT"
+
+[[mods]]
+	modId="stackableeverything"
+	version="1.0"
+	displayName="Everything is Stackable!"
+	displayURL="https://www.curseforge.com/minecraft/mc-mods/stackable-everything"
+	issueTrackerURL="https://github.com/EdArdolino/StackableEverything/issues"
+	logoFile=""
+	credits=""
+	authors="Ed Ardolino"
+	description='''
+	Everything is Stackable!
+'''
+
+[[dependencies.stackableeverything]]
+    modId="forge"
+    mandatory=true
+    versionRange="[39,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.stackableeverything]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.1,1.19)"
+    ordering="AFTER"
+    side="BOTH"
