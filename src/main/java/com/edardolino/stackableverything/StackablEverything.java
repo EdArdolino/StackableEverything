@@ -25,7 +25,7 @@ public class StackablEverything {
 	private void setupCommon(final FMLCommonSetupEvent event) {
 
 		for (Item Item : ForgeRegistries.ITEMS) {
-			if (!Item::canBeDepleted() && Item.getMaxStackSize() < 64 && Item.getRegistryName().getNamespace() == "minecraft") {
+			if (!Item.canBeDepleted() && Item.getMaxStackSize() < 64 && Item.getRegistryName().getNamespace() == "minecraft") {
 				ObfuscationReflectionHelper.setPrivateValue(Item.class, Item, 64, "field_77777_bU");
 			}
 		}
