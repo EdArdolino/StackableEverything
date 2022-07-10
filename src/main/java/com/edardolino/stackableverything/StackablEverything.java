@@ -23,21 +23,13 @@ public class StackablEverything {
 
 	@SuppressWarnings("deprecation")
 	private void setupCommon(final FMLCommonSetupEvent event) {
-		
 
-		for(Item Item : ForgeRegistries.ITEMS)
-		{
-			if( Item.getMaxStackSize() < 64 && Item.getRegistryName().getNamespace() == "minecraft")
-			{
+		for (Item Item : ForgeRegistries.ITEMS) {
+			if (!Item.canBeDepleted() && Item.getMaxStackSize() < 64 && Item.getRegistryName().getNamespace() == "minecraft") {
 				ObfuscationReflectionHelper.setPrivateValue(Item.class, Item, 64, "field_77777_bU");
 			}
 		}
-
 	}
 
-	private void setupClient(final FMLClientSetupEvent event) {
-		
-	}
-	
-	
+	private void setupClient(final FMLClientSetupEvent event) {}
 }
